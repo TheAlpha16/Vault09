@@ -1,2 +1,28 @@
 # Vault09
 Vault09 is an application designed to provide secure and reliable file storage for users seeking to protect their valuable data.
+
+## Features:
+- Strong encryption
+- Supports all file types
+- Deploy easily with docker
+- Multi-User support
+- Doesn't store encryption passwords or hashes
+
+## Tech Stack
+- Go
+- MySQL
+- HTML5
+- CSS3
+- JavaScript
+
+## Installation
+
+```bash
+$ git clone https://github.com/TheAlpha16/Vault09
+$ cd Vault09
+$ docker compose up -d
+
+Visit http://127.0.0.1:9909/ to access the site.
+```
+
+To know about docker installation check [this](https://docs.docker.com/engine/install/)

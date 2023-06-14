@@ -1,4 +1,4 @@
-module github.com/TheAlpha16/Vault09
+module github.com/TheAlpha16/Vault09/secure
 
 go 1.20
 
