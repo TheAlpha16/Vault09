@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <title>Vault09</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+        <a href="/"><img src="static/logo.png" class="logo"></a>
+    </header>
+
+    <div class="container">
+        <h1 class="title" >Login</h1>
+        <form id="login" class="form" action="/login" method="post">
+            <div class="form-field">
+                <input type="text" name="username" id="username" placeholder="username" autocomplete="off" required>
+                <small></small>
+            </div>
+
+            <div class="form-field">
+                <input type="password" name="password" id="password" placeholder="password" autocomplete="off" required>
+                <small></small>
+            </div>
+
+            <div class="form-field">
+                <input type="submit" value="Login" class="btn">
+            </div>
+            <div class="register" style="font-family: 'Open Sans', sans-serif;font-weight: 300;">
+                Don't have an account? <a href="/register">Register</a>
+            </div>
+        </form>
+        <div class="message" style="text-align:center; margin: 10px;">
+            <p> {{ .message }}</p>
+        </div>
+    </div>
+</body>
+</html>

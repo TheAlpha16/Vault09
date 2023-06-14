@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <title>Vault09</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+	<header>
+		<a href="/"><img src="static/logo.png" class="logo"></a>
+		<div class="nav-btn">
+			<a class="register-btn" href="/">Home</a>
+			<a class="login-btn" href="/logout">Logout</a>
+		</div>
+	</header>
+	<div id="blurme" class="blur-false"></div>
+    <div id="message" class="message">
+        {{ .message }}
+    </div>
+		<form id="upload-form" enctype="multipart/form-data" action="/upload" method="post" style="
+		display: grid;
+		grid-template-columns: auto;
+		width: 100vw;
+		justify-content: center;
+		justify-items: center;
+	" >
+			<div id="drop-zone" class="drop-zone">
+				<span class="drop-zone__prompt">Drop file here or click to upload</span>
+				<input class="drop-zone__input" type="file" name="file" required>
+				<div onclick="event.stopPropagation()" id="dialog" class="dialog-close">
+					<div class="warn">Please remember the password</div>
+					<div class="warn">File cannot be recovered without password</div>
+					<input id="password" class="clearme" type="password" name="password" placeholder="password"/>
+					<div class="dialog-btn">
+						<button class="prompt-btn" type="button" onclick="passSubmit()">OK</button>
+						<button class="prompt-btn" type="button" onclick="closeDialog()">Cancel</button>
+					</div>
+					<div id="empty-pass"></div>
+				</div>
+			</div>
+			<button style="width: 100%;" class="body-btn" type="button" onclick="showDialog()">Upload</button>
+		</form>
+	<script src="static/upload.js"></script>
+</body>
+</html>

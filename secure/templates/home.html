@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <title>Vault09</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<header>
+    <a href="/"><img src="static/logo.png" class="logo"></a>
+    <div class="nav-btn">
+        <a class="register-btn" href="/upload">Upload</a>
+        <a class="login-btn" href="/logout">Logout</a>
+    </div>
+</header>
+<body onload="updateClass()">
+    <div id="blurme" class="blur-false"></div>
+    
+    <div id="dialog" class="dialog-close" hash="" action="">
+        <form id="form" method="post" action="/download">
+            <input id="passwd" class="clearme" type="password" name="password" placeholder="password" required/>
+            <div class="dialog-btn">
+                <button class="prompt-btn" type="submit" onclick="passSubmit()">OK</button>
+                <button class="prompt-btn" type="button" onclick="closeDialog()">Cancel</button>
+                <input id="filehash" name="filehash" value="" hidden/>
+            </div>
+        </form>
+    </div>
+
+    <div id="message" class="message">
+        {{ .message }}
+    </div>
+    <div id="file-container" class="file-container" length="{{.length}}">
+        <img id="empty_box" src="static/empty_box.svg" width="300px">
+        <div class="empty-msg">No files here. Please upload!</div>
+            {{range .files }}
+            <div class="file" hash="{{.FileHash}}">
+                    {{.FileName}}
+                    <div id="form-{{.FileHash}}" style="display: flex;">
+                        <button class="body-btn" type="reset" onclick="handler('{{.FileHash}}', 'download')">Download</button>
+                        <button class="body-btn" type="reset" onclick="handler('{{.FileHash}}', 'delete')">Delete</button>
+                    </div>
+            </div>
+            {{end}}
+    </div>
+    <script src="static/home.js"></script>
+</body>
+</html>

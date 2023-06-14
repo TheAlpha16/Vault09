@@ -1,0 +1,31 @@
+version: '3.7'
+
+x-common-variables: &common-variables
+  MYSQL_DATABASE: data
+  MYSQL_USER: vault
+  MYSQL_PASSWORD: changethis
+
+services:
+
+  database:
+    container_name: database
+    build: ./database
+    environment:
+       <<: *common-variables
+    networks:
+      - backend
+    restart: always
+
+  vault:
+    container_name: vault
+    build: ./secure
+    environment:
+       <<: *common-variables
+    ports:
+      - 9909:9909
+    networks:
+      - backend
+    restart: always
+
+networks:
+  backend: {}
