@@ -1,6 +1,9 @@
 # Vault09
 Vault09 is an application designed to provide secure and reliable file storage for users seeking to protect their valuable data.
 
+- [Installation](#installation)
+- [Glimpse](#glimpse)
+
 ## Features:
 - Strong encryption
 - Supports all file types
@@ -26,3 +29,25 @@ Visit http://127.0.0.1:9909/ to access the site.
 ```
 
 To know about docker installation check [this](https://docs.docker.com/engine/install/)
+
+## Things to be noted
+
+Please consider changing default MYSQL_USER and MYSQL_PASSWORD for database in [compose](./docker-compose.yml) file.
+
+Currently file size is capped at 1GB. You can change it in [main.go](./secure/main.go) line-15.
+
+## Glimpse
+
+Access the trial instance of the website at http://vulnerablesite.ml:9909
+
+You can register yourself or use these creds:
+
+```
+username: Test123
+password: Test123.
+```
+
+![index-page](./images/index.png)
+![register](./images/register.png)
+![home](./images/homepage.png)
+![upload](./images/upload.png)
