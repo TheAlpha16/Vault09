@@ -1,8 +1,15 @@
 # Vault09
 Vault09 is an application designed to provide secure and reliable file storage for users seeking to protect their valuable data.
 
-- [Installation](#installation)
-- [Glimpse](#glimpse)
+
+Access the trial instance of the website at http://vulnerablesite.ml:9909
+
+You can register yourself or use these creds:
+
+```
+username: Test123
+password: Test123.
+```
 
 ## Features:
 - Strong encryption
@@ -37,15 +44,6 @@ Please consider changing default MYSQL_USER and MYSQL_PASSWORD for database in [
 Currently file size is capped at 1GB. You can change it in [main.go](./secure/main.go) line-15.
 
 ## Glimpse
-
-Access the trial instance of the website at http://vulnerablesite.ml:9909
-
-You can register yourself or use these creds:
-
-```
-username: Test123
-password: Test123.
-```
 
 ![index-page](./images/index.png)
 ![register](./images/register.png)
