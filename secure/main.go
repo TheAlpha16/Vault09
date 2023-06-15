@@ -33,7 +33,7 @@ func ping(c *gin.Context){
 func register(c *gin.Context){
 
 	type creds struct {
-		Username string `form:"username" validate:"required,alphanum,min=6,max=20"`
+		Username string `form:"username" validate:"required,min=6,max=20"`
 		Password string `form:"password" validate:"required,min=8,max=20"`
 		Confirm_pass string `form:"confirm-password" validate:"required,eqfield=Password"`
 	}
