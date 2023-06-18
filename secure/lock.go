@@ -244,8 +244,9 @@ func updateTable(id string, hash string, name string, action string) (string) {
 
 
 func generateKey() {
-	random_string := randomFilename(16)
-	hash := SHA256Hash(random_string)
+	random_string := make([]byte, 16)
+	_, _ = rand.Read(random_string)
+	hash := SHA256Hash(string((random_string)))
 	os.Setenv("SECRET_KEY", hash)
 }
 
